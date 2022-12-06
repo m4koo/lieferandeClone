@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+}
+
+nav{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    border-bottom: 1px solid black; /*for visual, delete later*/
+}
+
+nav span{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+nav span:first-child{
+    color: darkorange;
+}
+
+#nav-icons img{
+    height: 25px;
+    width: 25px;
+    object-fit: contain;
+}
+
+#nav-icons img:first-child{
+    object-fit: cover !important;
+    border-radius: 50%;
+}
