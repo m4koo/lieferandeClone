@@ -30,3 +30,32 @@ nav span:first-child{
     object-fit: cover !important;
     border-radius: 50%;
 }
+
+#wrapper{
+    display: flex;
+}
+
+/* SHOP  */
+#shop{
+    width: 75vw;
+    height: 200vh;
+}
+#shop-img{
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0 40%;
+}
+
+/* BASKET */
+#basket{
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 25vw;
+    border-left: 1px solid rgba(201, 201, 201, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(201, 201, 201, 0.65);
+}
