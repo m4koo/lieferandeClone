@@ -2,13 +2,18 @@ body{
     margin: 0;
 }
 
+.grey{
+    color: rgb(130, 130, 130);
+}
+
 nav{
     height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 50px;
-    border-bottom: 1px solid black; /*for visual, delete later*/
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.3); for visual, delete later */
+    box-shadow: 0px 5px 15px 4px rgba(0,0,0,0.29);;
 }
 
 nav span{
@@ -52,7 +57,9 @@ nav span:first-child{
 }
 
 #shop-info{
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
+    box-shadow:0px 5px 5px rgba(0, 0, 0, 0.1);
+
 }
 
 #rating img{
@@ -60,13 +67,10 @@ nav span:first-child{
     filter: invert(39%) sepia(94%) saturate(848%) hue-rotate(8deg) brightness(99%) contrast(103%);
 }
 
-#rating a{
-    color: black;
-}
-
 #info-icons{
     display: flex;
     gap: 10px;
+    padding-top: 5px;
 }
 #info-icons > span{
     display: flex;
@@ -76,6 +80,12 @@ nav span:first-child{
 #info-icons > span > img{
     height: 12px;
 }
+
+#shop-info > span{
+    display: block;
+    padding: 10px 0;
+}
+
 /* BASKET */
 #basket{
     position: sticky;
