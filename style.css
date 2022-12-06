@@ -17,7 +17,7 @@ nav span{
 }
 
 nav span:first-child{
-    color: darkorange;
+    color: #d27300;
 }
 
 #nav-icons img{
@@ -38,7 +38,7 @@ nav span:first-child{
 /* SHOP  */
 #shop{
     width: 75vw;
-    height: 200vh;
+    /* height: 200vh; */
 }
 #shop-img{
     height: 250px;
@@ -47,6 +47,35 @@ nav span:first-child{
     object-position: 0 40%;
 }
 
+#shop > *:not(img){
+    padding: 0 100px;
+}
+
+#shop-info{
+    border-bottom: 1px solid black;
+}
+
+#rating img{
+    height: 10px;
+    filter: invert(39%) sepia(94%) saturate(848%) hue-rotate(8deg) brightness(99%) contrast(103%);
+}
+
+#rating a{
+    color: black;
+}
+
+#info-icons{
+    display: flex;
+    gap: 10px;
+}
+#info-icons > span{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+#info-icons > span > img{
+    height: 12px;
+}
 /* BASKET */
 #basket{
     position: sticky;
