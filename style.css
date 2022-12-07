@@ -6,6 +6,11 @@ body{
     color: rgb(130, 130, 130);
 }
 
+h1{
+    font-size: 40px;
+    margin: 20px 0;
+}
+
 nav{
     height: 100px;
     display: flex;
@@ -86,6 +91,34 @@ nav span:first-child{
     padding: 10px 0;
 }
 
+
+/* ITEMS  */
+
+.item-card{
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    padding: 10px;
+    position: relative;
+}
+
+h3{
+    margin: 0;
+}
+
+.item-card p{
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.item-card button{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+}
 /* BASKET */
 #basket{
     position: sticky;
