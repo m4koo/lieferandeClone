@@ -74,7 +74,7 @@ nav span:first-child{
 
 #info-icons{
     display: flex;
-    gap: 10px;
+    gap: 20px;
     padding-top: 5px;
 }
 #info-icons > span{
@@ -98,6 +98,7 @@ nav span:first-child{
     border-radius: 10px;
     border: 1px solid lightgray;
     padding: 10px;
+    margin-bottom: 20px;
     position: relative;
 }
 
@@ -118,6 +119,14 @@ h3{
     border-radius: 50%;
     height: 25px;
     width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-card button img{
+    height: 20px;
+    width: 20px;
 }
 /* BASKET */
 #basket{
