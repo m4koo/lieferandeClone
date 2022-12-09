@@ -39,6 +39,7 @@ nav span:first-child{
 #nav-icons img:first-child{
     object-fit: cover !important;
     border-radius: 50%;
+    margin-right: 10px;
 }
 
 #wrapper{
@@ -96,10 +97,14 @@ nav span:first-child{
 
 .item-card{
     border-radius: 10px;
-    border: 1px solid lightgray;
+    border: 1px solid rgb(211, 211, 211);
     padding: 10px;
     margin-bottom: 20px;
     position: relative;
+}
+
+.item-card:hover {
+    background-color: rgb(239,  239, 239);
 }
 
 h3{
@@ -139,4 +144,14 @@ h3{
     flex-direction: column;
     align-items: center;
     background-color: rgba(201, 201, 201, 0.65);
+}
+
+#empty{
+    text-align: center;
+    padding: 30px;
+}
+
+#empty img{
+    height: 30px;
+    object-fit: contain;
 }
