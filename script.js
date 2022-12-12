@@ -50,9 +50,14 @@ function renderBasket() {
 
 function generateBasketItemHTML(i) {
     document.getElementById('basket').innerHTML += `
-        <div class='basket-items' id='baskter-item${i}'>
-            <h3>${amount[i]}x ${basketFood[i]}</h3>
+        <div class='basket-items' id='basket-item${i}'>
+            <h3><span>${amount[i]}</span>${basketFood[i]}</h3>
             <span>${(amount[i] * basketPrice[i]).toFixed(2)}$</span>
+            <div id="amount-buttons">
+                <a href="#">Anmerkung hinzufügen</a>
+                <button><img src="img/svg/plus.svg"></button>
+                <button><img src="img/svg/minus.svg"></button>
+            </div>
         </div>
     `;
 }
