@@ -49,7 +49,9 @@ function removeFromBasket(i){
         amount[i] -= 1;
     }
     renderBasket();
-    generateTotalPrice();
+    if(amount.length > 0){
+        generateTotalPrice();
+    }
 }
 
 function renderBasket() {
@@ -67,18 +69,18 @@ function renderBasket() {
             <span>Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.</span>
         </div>
         `; 
-        document.getElementById('total-bill').innerHTML = "";
     }
 }
 
 function generateBasketItemHTML(i) {
+    let index = basketFood.indexOf(food[i]);
     document.getElementById('basket').innerHTML += `
         <div class='basket-items' id='basket-item${i}'>
             <h3><span>${amount[i]}</span>${basketFood[i]}</h3>
             <span>${(amount[i] * basketPrice[i]).toFixed(2)}$</span>
             <div id="amount-buttons">
                 <a href="#">Anmerkung hinzufügen</a>
-                <button onclick="addToBasket(${i})"><img src="img/svg/plus.svg"></button>
+                <button onclick="addToBasket(${index})"><img src="img/svg/plus.svg"></button>
                 <button onclick="removeFromBasket(${i})"><img src="img/svg/minus.svg"></button>
             </div>
         </div>
