@@ -93,7 +93,8 @@ function generateTotalPrice() {
             <span>Zwischensumme: ${rawCost.toFixed(2)}€</span>
             <span>Lieferkosten: 4.99€</span>
             <span>Servicegebühr: 0.89€</span>
-            <span>Gesamt: ${totalCost.toFixed(2)}€</span>
+            <span class="bold">Gesamt: ${totalCost.toFixed(2)}€</span>
+            <button>Bezahlen (${totalCost.toFixed(2)}€)</button>
         </div>
     `;
 }

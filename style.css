@@ -6,6 +6,10 @@ body{
     color: rgb(130, 130, 130);
 }
 
+.bold{
+    font-weight: bold;
+}
+
 h1{
     font-size: 40px;
     margin: 20px 0;
@@ -222,6 +226,12 @@ h3{
     gap: 10px;
 }
 
-#total-bill span:last-child{
-    font-weight: bold;
+#total-bill button{
+    width: 100%;
+    border: none;
+    background-color: orange;
+    border-radius: 50px;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
 }
