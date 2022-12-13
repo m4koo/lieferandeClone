@@ -14,7 +14,6 @@ function render() {
 
 function generateItemsHTML(i){
     let items = document.getElementById('items');
-
     items.innerHTML += `
         <div class="item-card" onclick="addToBasket(${i})">
             <h3>${food[i]}</h3>
@@ -36,6 +35,12 @@ function addToBasket(i) {
     }else{
         amount[index] += 1;
     }
+    renderBasket();
+    generateTotalPrice();
+}
+
+function addAmount(i){
+    amount[i] += 1;
     renderBasket();
     generateTotalPrice();
 }
@@ -73,14 +78,14 @@ function renderBasket() {
 }
 
 function generateBasketItemHTML(i) {
-    let index = basketFood.indexOf(food[i]);
+    // let index = basketFood.indexOf(food[i]);
     document.getElementById('basket').innerHTML += `
         <div class='basket-items' id='basket-item${i}'>
             <h3><span>${amount[i]}</span>${basketFood[i]}</h3>
             <span>${(amount[i] * basketPrice[i]).toFixed(2)}$</span>
             <div id="amount-buttons">
                 <a href="#">Anmerkung hinzufügen</a>
-                <button onclick="addToBasket(${index})"><img src="img/svg/plus.svg"></button>
+                <button onclick="addAmount(${i})"><img src="img/svg/plus.svg"></button>
                 <button onclick="removeFromBasket(${i})"><img src="img/svg/minus.svg"></button>
             </div>
         </div>
