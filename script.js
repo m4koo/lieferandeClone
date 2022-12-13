@@ -12,16 +12,22 @@ function render() {
     }
 }
 
-function generateItemsHTML(i){
-    let items = document.getElementById('items');
-    items.innerHTML += `
-        <div class="item-card" onclick="addToBasket(${i})">
-            <h3>${food[i]}</h3>
-            <p>${ingredients[i]}</p>
-            <div>${price[i].toFixed(2)}$</div>
-            <button><img src="img/svg/plus.svg"></button>
+function renderBasket() {
+    let basket = document.getElementById('basket');
+    basket.innerHTML ='<h2>Warenkorb</h2>';
+    if (basketFood.length > 0){
+        for (let i = 0; i < basketFood.length; i++) {
+            generateBasketItemHTML(i);
+        }
+    }else{
+        basket.innerHTML += `
+        <div id="empty">
+            <img src="img/svg/shopping-bag.svg">
+            <h3>Fülle deinen Warenkorb</h3>
+            <span>Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.</span>
         </div>
-    `;
+        `; 
+    }
 }
 
 function addToBasket(i) {
@@ -59,22 +65,16 @@ function removeFromBasket(i){
     }
 }
 
-function renderBasket() {
-    let basket = document.getElementById('basket');
-    basket.innerHTML ='<h2>Warenkorb</h2>';
-    if (basketFood.length > 0){
-        for (let i = 0; i < basketFood.length; i++) {
-            generateBasketItemHTML(i);
-        }
-    }else{
-        basket.innerHTML += `
-        <div id="empty">
-            <img src="img/svg/shopping-bag.svg">
-            <h3>Fülle deinen Warenkorb</h3>
-            <span>Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.</span>
+function generateItemsHTML(i){
+    let items = document.getElementById('items');
+    items.innerHTML += `
+        <div class="item-card" onclick="addToBasket(${i})">
+            <h3>${food[i]}</h3>
+            <p>${ingredients[i]}</p>
+            <div>${price[i].toFixed(2)}$</div>
+            <button><img src="img/svg/plus.svg"></button>
         </div>
-        `; 
-    }
+    `;
 }
 
 function generateBasketItemHTML(i) {
