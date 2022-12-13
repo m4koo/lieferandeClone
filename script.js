@@ -12,7 +12,6 @@ function render() {
     }
 }
 
-
 function generateItemsHTML(i){
     let items = document.getElementById('items');
 
@@ -39,6 +38,7 @@ function addToBasket(i) {
     }
 
     renderBasket();
+    generateTotalPrice();
 }
 
 function renderBasket() {
@@ -60,4 +60,24 @@ function generateBasketItemHTML(i) {
             </div>
         </div>
     `;
+}
+
+function generateTotalPrice() {
+
+    document.getElementById('basket').innerHTML +=`
+        <div id="total-bill">
+            <span>Zwischensumme: ${calcCost().toFixed(2)}€</span>
+            <span>Lieferkosten: 4.99€</span>
+            <span>Servicegebühr: 0.89€</span>
+            <span>Gesamt: ${(calcCost() + 4.99 + 0.89).toFixed(2)}€</span>
+        </div>
+    `;
+}
+
+function calcCost(){
+    let rawCost = 0;
+    for (let i = 0; i < basketPrice.length; i++) {
+        rawCost += basketPrice[i] * amount[i];
+    }
+    return rawCost;
 }
