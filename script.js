@@ -20,13 +20,7 @@ function renderBasket() {
             generateBasketItemHTML(i);
         }
     }else{
-        basket.innerHTML += `
-        <div id="empty">
-            <img src="img/svg/shopping-bag.svg">
-            <h3>Fülle deinen Warenkorb</h3>
-            <span>Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.</span>
-        </div>
-        `; 
+        generateEmptyBasket(basket);
     }
 }
 
@@ -90,6 +84,16 @@ function generateBasketItemHTML(i) {
             </div>
         </div>
     `;
+}
+
+function generateEmptyBasket(basket){
+    basket.innerHTML += `
+        <div id="empty">
+            <img src="img/svg/shopping-bag.svg">
+            <h3>Fülle deinen Warenkorb</h3>
+            <span>Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.</span>
+        </div>
+    `; 
 }
 
 function generateTotalPrice() {
