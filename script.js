@@ -36,15 +36,38 @@ function addToBasket(i) {
     }else{
         amount[index] += 1;
     }
+    renderBasket();
+    generateTotalPrice();
+}
 
+function removeFromBasket(i){
+    if(amount[i] === 1){
+        basketFood.splice(i, 1);
+        basketPrice.splice(i, 1);
+        amount.splice(i, 1);  
+    }else {
+        amount[i] -= 1;
+    }
     renderBasket();
     generateTotalPrice();
 }
 
 function renderBasket() {
-    document.getElementById('basket').innerHTML ='<h2>Warenkorb</h2>';
-    for (let i = 0; i < basketFood.length; i++) {
-        generateBasketItemHTML(i);
+    let basket = document.getElementById('basket');
+    basket.innerHTML ='<h2>Warenkorb</h2>';
+    if (basketFood.length > 0){
+        for (let i = 0; i < basketFood.length; i++) {
+            generateBasketItemHTML(i);
+        }
+    }else{
+        basket.innerHTML += `
+        <div id="empty">
+            <img src="img/svg/shopping-bag.svg">
+            <h3>Fülle deinen Warenkorb</h3>
+            <span>Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.</span>
+        </div>
+        `; 
+        document.getElementById('total-bill').innerHTML = "";
     }
 }
 
@@ -55,21 +78,22 @@ function generateBasketItemHTML(i) {
             <span>${(amount[i] * basketPrice[i]).toFixed(2)}$</span>
             <div id="amount-buttons">
                 <a href="#">Anmerkung hinzufügen</a>
-                <button><img src="img/svg/plus.svg"></button>
-                <button><img src="img/svg/minus.svg"></button>
+                <button onclick="addToBasket(${i})"><img src="img/svg/plus.svg"></button>
+                <button onclick="removeFromBasket(${i})"><img src="img/svg/minus.svg"></button>
             </div>
         </div>
     `;
 }
 
 function generateTotalPrice() {
-
+    let rawCost = calcCost();
+    let totalCost = rawCost + 4.99 + 0.89;
     document.getElementById('basket').innerHTML +=`
         <div id="total-bill">
-            <span>Zwischensumme: ${calcCost().toFixed(2)}€</span>
+            <span>Zwischensumme: ${rawCost.toFixed(2)}€</span>
             <span>Lieferkosten: 4.99€</span>
             <span>Servicegebühr: 0.89€</span>
-            <span>Gesamt: ${(calcCost() + 4.99 + 0.89).toFixed(2)}€</span>
+            <span>Gesamt: ${totalCost.toFixed(2)}€</span>
         </div>
     `;
 }

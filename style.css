@@ -221,3 +221,7 @@ h3{
     align-items: flex-start;
     gap: 10px;
 }
+
+#total-bill span:last-child{
+    font-weight: bold;
+}
