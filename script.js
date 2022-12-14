@@ -72,7 +72,6 @@ function generateItemsHTML(i){
 }
 
 function generateBasketItemHTML(i) {
-    // let index = basketFood.indexOf(food[i]);
     document.getElementById('basket').innerHTML += `
         <div class='basket-items' id='basket-item${i}'>
             <h3><span>${amount[i]}</span>${basketFood[i]}</h3>
