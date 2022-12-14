@@ -40,7 +40,7 @@ function addToBasket(i) {
 }
 
 function addAmount(i){
-    amount[i] += 1;
+    amount[i]++;
     renderBasket();
     generateTotalPrice();
 }
@@ -101,13 +101,14 @@ function generateTotalPrice() {
     let totalCost = rawCost + 4.99 + 0.89;
     document.getElementById('basket').innerHTML +=`
         <div id="total-bill">
+            <span class="grey">Mindestbestellwert: 20.00€</span>
             <span>Zwischensumme: ${rawCost.toFixed(2)}€</span>
             <span>Lieferkosten: 4.99€</span>
             <span>Servicegebühr: 0.89€</span>
             <span class="bold">Gesamt: ${totalCost.toFixed(2)}€</span>
-            <button>Bezahlen (${totalCost.toFixed(2)}€)</button>
+            <button id="pay">${minPurchase(totalCost)}</button> 
         </div>
-    `;
+    `; 
 }
 
 function calcCost(){
@@ -116,4 +117,13 @@ function calcCost(){
         rawCost += basketPrice[i] * amount[i];
     }
     return rawCost;
+}
+
+function minPurchase(total){
+    let minValue = 20.00;
+    if (total >= minValue){
+        return 'Bezahlen (' + total.toFixed(2) + '€)'
+    }else{
+        return "Mind. Bestellwert nicht erfüllt"
+    }
 }
