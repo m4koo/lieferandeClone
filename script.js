@@ -127,12 +127,12 @@ function generateEmptyBasket(basket){
 
 function generateTotalPrice() {
     let rawCost = calcCost();
-    let totalCost = rawCost + 4.99 + 0.89;
+    let totalCost = rawCost + 1.99 + 0.89;
     document.getElementById('basket').innerHTML +=`
         <div id="total-bill">
             <span class="grey">Mindestbestellwert: 20.00€</span>
             <span>Zwischensumme: ${rawCost.toFixed(2)}€</span>
-            <span>Lieferkosten: 4.99€</span>
+            <span>Lieferkosten: 1.99€</span>
             <span>Servicegebühr: 0.89€</span>
             <span class="bold">Gesamt: ${totalCost.toFixed(2)}€</span>
             <button id="pay">${minPurchase(totalCost)}</button> 
