@@ -84,7 +84,6 @@ nav span:first-child{
     left: 100px;
     height: 100px;
     object-fit: contain;
-    z-index: 2;
     border-radius: 10px;
 }
 
