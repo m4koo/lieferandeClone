@@ -18,7 +18,7 @@ function render() {
 function renderBasket() {
     let basket = document.getElementById('basket');
     basket.innerHTML =`<h2>Warenkorb</h2>
-        <button id="closeBasket" onclick="closeBasket()">x</button>`;
+        <button id="closeBasket" onclick="closeBasket()"><img src="img/svg/close.svg"></button>`;
     if (basketFood.length > 0){
         for (let i = 0; i < basketFood.length; i++) {
             generateBasketItemHTML(i);
@@ -159,11 +159,21 @@ function minPurchase(total){
 }
 
 // MOBILE BASKET BUTTON
+const slidein = [
+    {top: '100%'},
+    {top: '0'}
+];
+
+const slideout = [
+    {top: '0'},
+    {top: '100%'}
+];
+
 function openBasket(){
     let basket = document.getElementById('basket');
     let shop = document.getElementById('shop');
-
     basket.style.display="block";
+    basket.animate(slidein, 125);
     shop.style.display="none";
 }
 
@@ -171,6 +181,9 @@ function closeBasket(){
     let basket = document.getElementById('basket');
     let shop = document.getElementById('shop');
 
-    basket.style.display="none";
+    basket.animate(slideout, 125);
+    setTimeout(() => {
+        basket.style.display="none";
+      }, "125")
     shop.style.display="block"
 }

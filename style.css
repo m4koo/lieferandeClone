@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 body{
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -285,9 +288,16 @@ h3{
     width: 32px;
     border: none;
     border-radius: 50%;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     z-index: 99;
+}
+
+#closeBasket img{
+    height: inherit;
+    width: inherit;
 }
 
 @media (max-width: 1000px){
@@ -300,6 +310,7 @@ h3{
         bottom: 0;
         background-color: white;
         width: calc(100vw - 20px);
+        /* animation: slidein 125ms; */
     }
     #shop{
         width: 100vw;
@@ -371,3 +382,7 @@ h3{
         gap: 10px;
     }
 }
+
+
+
+  
