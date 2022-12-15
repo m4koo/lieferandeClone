@@ -6,6 +6,10 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
+.hidden{
+    display: none !important;
+}
+
 .grey{
     color: rgb(130, 130, 130);
 }
@@ -153,7 +157,6 @@ h3{
     height: 100vh;
     width: 25vw;
     border-left: 1px solid rgba(201, 201, 201, 1);
-    display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0 10px;
@@ -281,6 +284,7 @@ h3{
 }
 
 #closeBasket{
+    display: none;
     position: absolute;
     top: 20px;
     right: 50px;
@@ -288,7 +292,6 @@ h3{
     width: 32px;
     border: none;
     border-radius: 50%;
-    display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -298,6 +301,12 @@ h3{
 #closeBasket img{
     height: inherit;
     width: inherit;
+}
+
+@media (min-width: 1001px){
+    #basket{
+        display: flex !important;
+    }
 }
 
 @media (max-width: 1000px){
@@ -311,6 +320,10 @@ h3{
         background-color: white;
         width: calc(100vw - 20px);
         /* animation: slidein 125ms; */
+    }
+
+    #closeBasket{
+        display: flex;
     }
     #shop{
         width: 100vw;
