@@ -20,7 +20,7 @@ body{
 
 h1{
     font-size: 40px;
-    margin: 20px 0;
+    margin: 30px 0 20px 0;
 }
 
 /* NAV */
@@ -68,7 +68,9 @@ nav span:first-child{
     position: relative;
     margin-bottom: 100px;
 }
-
+#images{
+    position: relative;
+}
 #shop-img{
     height: 250px;
     width: 100%;
@@ -76,7 +78,17 @@ nav span:first-child{
     object-position: 0 40%;
 }
 
-#shop > *:not(img){
+#logo{
+    position: absolute;
+    bottom: -20px;
+    left: 100px;
+    height: 100px;
+    object-fit: contain;
+    z-index: 2;
+    border-radius: 10px;
+}
+
+#shop > *:not(#images){
     padding: 0 100px;
 }
 
@@ -366,8 +378,13 @@ h3{
 }
 
 @media(max-width: 620px){
-    #shop > *:not(img){
+    #shop > *:not(#images){
         padding: 0 40px;
+    }
+
+    #logo{
+        left: 40px;
+        height: 80px;
     }
 
     nav{
@@ -379,15 +396,18 @@ h3{
     }
 }
 
-@media (max-width: 480px){
+@media (max-width: 500px){
     nav span:nth-child(2){
         display:none !important;
     }
     nav{
         padding: 0 20px;
     }
-    #shop > *:not(img){
+    #shop > *:not(#images){
         padding: 0 20px;
+    }
+    #logo{
+        left: 20px;
     }
 
     #info-icons{
