@@ -202,6 +202,7 @@ h3{
     flex: 1 0 75%;
     display: flex;
     gap: 10px;
+    font-size: 16px;
 }
 
 .basket-items > span{
