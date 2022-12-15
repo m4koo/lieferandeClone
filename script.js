@@ -68,13 +68,16 @@ function removeFromBasket(i){
 
 function renderBasketCounter(){
     let basketCount = document.getElementById('numberCircle');
-    basketCount.style.display="inline-flex";
     basketCount.innerHTML = `${counter}`;
-    if (counter >= 10){
+    if (counter >= 1){
+        basketCount.style.display="inline-flex";  
+    }else if (counter >= 10){
         basketCount.style.fontSize="10px"
     }else if(counter >= 100){
         basketCount.style.fontSize="8px"
         basketCount.innerHTML='99+'
+    }else {
+        basketCount.style.display="none";
     }
 }
 
