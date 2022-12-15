@@ -263,6 +263,33 @@ h3{
     cursor: pointer;
 }
 
+#numberCircle {
+    display: none;
+    position: absolute;
+    top: 12px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 50%;
+    background: red;
+    height: 14px;
+    width: 14px;
+    justify-content: center;
+    align-items: center;
+}
+
+#closeBasket{
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    height: 32px;
+    width: 32px;
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+    z-index: 99;
+}
+
 @media (max-width: 1000px){
     #basket{
         display: none;
@@ -280,6 +307,7 @@ h3{
 
     #basketBtn{
         display: block;
+        font-size: 16px;
     }
 
     #amount-buttons{

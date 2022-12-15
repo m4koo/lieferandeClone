@@ -41,17 +41,12 @@
             </div>
             <div id="items">
                 <h2>Burger</h2>
-                <!-- <div class="item-card">
-                    <h3>Essenstitel</h3>
-                    <p>zutaten zutaten zutaten zutaten zutaten zutaten zutaten zutaten zutaten zutaten zutaten zutaten zutaten </p>
-                    <div>12,99 €</div>
-                    <button><img src="img/svg/plus.svg"></button>
-                </div> -->
             </div>
-            <button id="basketBtn" onclick="openBasket()">Warenkorb</button>
+            <button id="basketBtn" onclick="openBasket()">Warenkorb<span id="numberCircle"></span></button>
         </section>
         <section id="basket">
             <h2>Warenkorb</h2>
+            <button id="closeBasket" onclick="closeBasket()">x</button>
             <div id="empty">
                 <img src="img/svg/shopping-bag.svg">
                 <h3>Fülle deinen Warenkorb</h3>

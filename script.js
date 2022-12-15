@@ -6,6 +6,8 @@ let basketFood = [];
 let basketPrice = [];
 let amount = [];
 
+let counter = 0;
+
 // RENDER
 function render() {
     for (let i = 0; i < food.length; i++) {
@@ -15,7 +17,8 @@ function render() {
 
 function renderBasket() {
     let basket = document.getElementById('basket');
-    basket.innerHTML ='<h2>Warenkorb</h2>';
+    basket.innerHTML =`<h2>Warenkorb</h2>
+        <button id="closeBasket" onclick="closeBasket()">x</button>`;
     if (basketFood.length > 0){
         for (let i = 0; i < basketFood.length; i++) {
             generateBasketItemHTML(i);
@@ -25,7 +28,7 @@ function renderBasket() {
     }
 }
 
-// BASKET MANIPULATION
+// BASKET
 function addToBasket(i) {
     let addedFood = food[i];
     let addedPrice = price[i];
@@ -37,6 +40,7 @@ function addToBasket(i) {
     }else{
         amount[index] += 1;
     }
+    addToBasketCounter();
     renderBasket();
     generateTotalPrice();
 }
@@ -56,9 +60,32 @@ function removeFromBasket(i){
         amount[i] -= 1;
     }
     renderBasket();
+    removeFromBasketCounter();
     if(amount.length > 0){
         generateTotalPrice();
     }
+}
+
+function renderBasketCounter(){
+    let basketCount = document.getElementById('numberCircle');
+    basketCount.style.display="inline-flex";
+    basketCount.innerHTML = `${counter}`;
+    if (counter >= 10){
+        basketCount.style.fontSize="10px"
+    }else if(counter >= 100){
+        basketCount.style.fontSize="8px"
+        basketCount.innerHTML='99+'
+    }
+}
+
+function addToBasketCounter(){
+    counter++;
+    renderBasketCounter();
+}
+
+function removeFromBasketCounter(){
+    counter--;
+    renderBasketCounter();
 }
 
 // HTML GENERATOR
@@ -138,4 +165,12 @@ function openBasket(){
 
     basket.style.display="block";
     shop.style.display="none";
+}
+
+function closeBasket(){
+    let basket = document.getElementById('basket');
+    let shop = document.getElementById('shop');
+
+    basket.style.display="none";
+    shop.style.display="block"
 }
