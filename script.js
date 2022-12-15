@@ -6,6 +6,7 @@ let basketFood = [];
 let basketPrice = [];
 let amount = [];
 
+// RENDER
 function render() {
     for (let i = 0; i < food.length; i++) {
         generateItemsHTML(i);
@@ -24,6 +25,7 @@ function renderBasket() {
     }
 }
 
+// BASKET MANIPULATION
 function addToBasket(i) {
     let addedFood = food[i];
     let addedPrice = price[i];
@@ -59,6 +61,7 @@ function removeFromBasket(i){
     }
 }
 
+// HTML GENERATOR
 function generateItemsHTML(i){
     let items = document.getElementById('items');
     items.innerHTML += `
@@ -110,6 +113,7 @@ function generateTotalPrice() {
     `; 
 }
 
+// CALCULATOR
 function calcCost(){
     let rawCost = 0;
     for (let i = 0; i < basketPrice.length; i++) {
@@ -125,4 +129,13 @@ function minPurchase(total){
     }else{
         return "Mind. Bestellwert nicht erfüllt"
     }
+}
+
+// MOBILE BASKET BUTTON
+function openBasket(){
+    let basket = document.getElementById('basket');
+    let shop = document.getElementById('shop');
+
+    basket.style.display="block";
+    shop.style.display="none";
 }

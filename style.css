@@ -16,6 +16,7 @@ h1{
     margin: 20px 0;
 }
 
+/* NAV */
 nav{
     height: 100px;
     display: flex;
@@ -32,6 +33,10 @@ nav span{
 
 nav span:first-child{
     color: #d27300;
+}
+
+#nav-icons{
+    display: flex;
 }
 
 #nav-icons img{
@@ -53,6 +58,8 @@ nav span:first-child{
 /* SHOP  */
 #shop{
     width: 75vw;
+    position: relative;
+    margin-bottom: 100px;
 }
 
 #shop-img{
@@ -149,6 +156,10 @@ h3{
     padding: 0 10px;
 }
 
+#basket > h2{
+    text-align: center;
+}
+
 #empty{
     text-align: center;
     padding: 30px;
@@ -232,4 +243,103 @@ h3{
     padding: 10px;
     font-size: 16px;
     color: white;
+}
+
+
+/* Responsive */
+
+#basketBtn{
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: none;
+    background-color: #d27300;
+    color: white;
+    height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 1000px){
+    #basket{
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: white;
+        width: calc(100vw - 20px);
+    }
+    #shop{
+        width: 100vw;
+    }
+
+    #basketBtn{
+        display: block;
+    }
+
+    #amount-buttons{
+        justify-content: center;
+    }
+
+    .basket-items{
+        justify-content: center;
+    }
+
+    .basket-items > h3{
+        flex: unset;
+        padding-right: 20px;
+    }
+
+    .basket-items > span {
+        flex: unset;
+    }
+
+    #total-bill{
+        align-items: center;
+    }
+}
+
+@media (max-width: 720px){
+    #info-icons{
+        font-size: 12px;
+    }
+    h1{
+        font-size: 32px;
+    }
+}
+
+@media(max-width: 620px){
+    #shop > *:not(img){
+        padding: 0 40px;
+    }
+
+    nav{
+        padding: 0 40px;
+    }
+
+    nav > span{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px){
+    nav span:nth-child(2){
+        display:none !important;
+    }
+    nav{
+        padding: 0 20px;
+    }
+    #shop > *:not(img){
+        padding: 0 20px;
+    }
+
+    #info-icons{
+        flex-wrap: wrap;
+        gap: 10px;
+    }
 }
