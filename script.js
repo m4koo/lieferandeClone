@@ -95,7 +95,7 @@ function generateItemsHTML(i){
         <div class="item-card" onclick="addToBasket(${i})">
             <h3>${food[i]}</h3>
             <p>${ingredients[i]}</p>
-            <div>${price[i].toFixed(2)}€</div>
+            <div>${price[i].toFixed(2).replace(".",",")}€</div>
             <button><img src="img/svg/plus.svg"></button>
         </div>
     `;
@@ -105,7 +105,7 @@ function generateBasketItemHTML(i) {
     document.getElementById('basket').innerHTML += `
         <div class='basket-items' id='basket-item${i}'>
             <h3><span>${amount[i]}</span>${basketFood[i]}</h3>
-            <span>${(amount[i] * basketPrice[i]).toFixed(2)}€</span>
+            <span>${(amount[i] * basketPrice[i]).toFixed(2).replace(".",",")}€</span>
             <div id="amount-buttons">
                 <a href="#">Anmerkung hinzufügen</a>
                 <button onclick="addAmount(${i})"><img src="img/svg/plus.svg"></button>
@@ -130,12 +130,12 @@ function generateTotalPrice() {
     let totalCost = rawCost + 1.99 + 0.89;
     document.getElementById('basket').innerHTML +=`
         <div id="total-bill">
-            <span class="grey">Mindestbestellwert: 20.00€</span>
-            <span>Zwischensumme: ${rawCost.toFixed(2)}€</span>
-            <span>Lieferkosten: 1.99€</span>
-            <span>Servicegebühr: 0.89€</span>
-            <span class="bold">Gesamt: ${totalCost.toFixed(2)}€</span>
-            <button id="pay">${minPurchase(totalCost)}</button> 
+            <span class="grey">Mindestbestellwert: 20,00€</span>
+            <span>Zwischensumme: ${rawCost.toFixed(2).replace(".",",")}€</span>
+            <span>Lieferkosten: 1,99€</span>
+            <span>Servicegebühr: 0,89€</span>
+            <span class="bold">Gesamt: ${totalCost.toFixed(2).replace(".",",")}€</span>
+            <button id="pay">${minPurchase(totalCost).replace(".",",")}</button> 
         </div>
     `; 
 }
