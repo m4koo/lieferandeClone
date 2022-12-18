@@ -114,7 +114,7 @@ function generateBasketItemHTML(i) {
             <h3><span>${amount[i]}</span>${basketFood[i]}</h3>
             <span>${(amount[i] * basketPrice[i]).toFixed(2).replace(".",",")}€</span>
             <div id="amount-buttons">
-                <a href="#">Anmerkung hinzufügen</a>
+                <span class="notImplemented" data-hover="Mich gibt es nur aus Style gründen.">Anmerkung hinzufügen</span>
                 <button onclick="addAmount(${i})"><img src="img/svg/plus.svg"></button>
                 <button onclick="removeFromBasket(${i})"><img src="img/svg/minus.svg"></button>
             </div>

@@ -222,10 +222,8 @@ h3{
     gap: 20px;
 }
 
-#amount-buttons a{
-    color: black;
+#amount-buttons span{
     font-size: 12px;
-    text-align: center;
 }
 
 #amount-buttons button{
@@ -417,6 +415,34 @@ h3{
     }
 }
 
+.notImplemented{
+    position: relative;
+    text-decoration: underline;
+    cursor: pointer;
+    text-align: center;
+}
 
+.notImplemented:before{
+    content: attr(data-hover);
+    font-size: 12px;
+    visibility: hidden;
+    opacity: 0;
+    width: max-content;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px;
+    transition: opacity 125ms ease-in-out;
 
+    position: absolute;
+    z-index: 19999;
+    left: -3px;
+    top: 110%;
+}
+
+.notImplemented:hover:before{
+    opacity: 1;
+    visibility: visible;
+}
   
