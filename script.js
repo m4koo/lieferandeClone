@@ -161,7 +161,7 @@ function minPurchase(total){
     if (total >= minValue){
         return 'Bezahlen (' + total.toFixed(2) + '€)'
     }else{
-        return "Mind. Bestellwert nicht erfüllt"
+        return "Mindestbestellwert nicht erfüllt"
     }
 }
 
