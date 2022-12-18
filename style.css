@@ -173,8 +173,10 @@ h3{
     padding: 0 10px;
 }
 
-#basket > h2{
-    text-align: center;
+#basketHead{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 #empty{
@@ -299,9 +301,6 @@ h3{
 
 #closeBasket{
     display: none;
-    position: absolute;
-    top: 20px;
-    right: 50px;
     height: 32px;
     width: 32px;
     border: none;

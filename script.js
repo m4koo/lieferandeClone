@@ -17,8 +17,12 @@ function render() {
 
 function renderBasket() {
     let basket = document.getElementById('basket');
-    basket.innerHTML =`<h2>Warenkorb</h2>
-        <button id="closeBasket" onclick="closeBasket()"><img src="img/svg/close.svg"></button>`;
+    basket.innerHTML =`
+    <div id="basketHead">
+        <div></div>
+        <h2>Warenkorb</h2>
+        <button id="closeBasket" onclick="closeBasket()"><img src="img/svg/close.svg"></button>
+    </div>`;
     if (basketFood.length > 0){
         for (let i = 0; i < basketFood.length; i++) {
             generateBasketItemHTML(i);
