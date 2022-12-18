@@ -51,6 +51,7 @@ function addToBasket(i) {
 
 function addAmount(i){
     amount[i]++;
+    addToBasketCounter();
     renderBasket();
     generateTotalPrice();
 }
